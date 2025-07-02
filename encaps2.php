@@ -3,7 +3,7 @@
 class Produto {
     //atributos
      private $descricao;
-     private $quanti;
+     private $quant;
      private $valorUnit;
      private $unidadeMedida;
   
@@ -34,9 +34,9 @@ class Produto {
         return $this->quanti;
     }
 
-    public function setQuanti($quanti): self
+    public function setQuant($quant): self
     {
-        $this->quanti = $quanti;
+        $this->quant = $quant;
 
         return $this;
     }

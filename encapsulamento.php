@@ -103,6 +103,6 @@ $produto1->setUnidadeMedida(readline("Informe a unidade de medida: "));
 }
 
 foreach ($produtos as $produto) {
-    $valorTotal = $produto->getQuanti() * $produto->getValorUnit();
-    echo $produto->getDescricao() . "(" . $produto->getUnidadeMedida() . ") | " . $produto->getQuanti() . " X " . $produto->getValorUnit() . " = " . $valorTotal . "\n";
+    $valorTotal = $produto->getQuant() * $produto->getValorUnit();
+    echo $produto->getDescricao() . "(" . $produto->getUnidadeMedida() . ") | " . $produto->getQuant() . " X " . $produto->getValorUnit() . " = " . $valorTotal . "\n";
 }

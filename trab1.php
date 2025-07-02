@@ -3,15 +3,21 @@
 class Produto {
     //atributos
      private $descricao;
-     private $quanti;
+     private $quant;
      private $valorUnit;
      private $unidadeMedida;
 
 
      //metodos
-     public function getValorTotal(){
+      public function __toString() {
+        $dados = "Descrição - " . $this->descricao;
+        $dados = " | Quantidade - " . $this->quant;
+        $dados = " | Valor unitário - " . $this->valorUnit;
+        $dados = " | Unidade de Medida - " . $this->unidadeMedida;
+        return $dados;
+     }
         
-    }
+    
 
      //GETs e SETs 
      public function getDescricao()
@@ -30,19 +36,19 @@ class Produto {
      }
 
     /**
-     * Get the value of quanti
+     * Get the value of quant
      */
-    public function getQuanti()
+    public function getQuant()
     {
-        return $this->quanti;
+        return $this->quant;
     }
 
     /**
-     * Set the value of quanti
+     * Set the value of quant
      */
-    public function setQuanti($quanti): self
+    public function setQuant($quant): self
     {
-        $this->quanti = $quanti;
+        $this->quant = $quant;
 
         return $this;
     }
@@ -84,12 +90,19 @@ class Produto {
      }
 }
 
+$produtos = array();
+
 for ($i=0; $i < 3; $i++) { 
 $produto1 = new Produto();
 $produto1->setDescricao(readline("Informe a descrição: "));
-$produto1->setQuanti(readline("Informe a quantidade: "));
+$produto1->setQuant(readline("Informe a quantidade: "));
 $produto1->setValorUnit(readline("Informe o valor unitário: "));
 $produto1->setUnidadeMedida(readline("Informe a unidade de medida: "));
+
+    array_push($produtos, $produto);
 }
 
-echo "$produto1: $descricao "; 
+foreach ($produtos as $produto) {
+    $valorTotal = $produto->getQuanti() * $produto->getValorUnit();
+    echo $produto->getDescricao() . "(" . $produto->getUnidadeMedida() . ") | " . $produto->getQuanti() . " X " . $produto->getValorUnit() . " = " . $valorTotal . "\n";
+}

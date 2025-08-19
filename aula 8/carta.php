@@ -91,6 +91,7 @@ print("2 - Como jogar\n");
 print("3 - Lista de cartas\n");
 print("4 - Sair\n");
 
+//colocar dentro de um laço
 $opcao = readline("Escolha uma opção: ");
     if ($opcao == 1) {
         $cartaEscolhida = readline("Escolha uma carta (1-7): ");
